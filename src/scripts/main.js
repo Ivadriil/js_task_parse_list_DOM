@@ -21,13 +21,12 @@ function sortList(listElement) {
 function getEmployees(listElement) {
   const people = Array.from(listElement.children);
 
-  people.forEach((person) => {
+  return people.map((person) => {
     const name1 = person.textContent.trim();
     const position = person.dataset.position;
     const salary = person.dataset.salary;
     const age = person.dataset.age;
-
-    return `Name: ${name1}, Position: ${position}, Salary: ${salary}, Age: ${age}`;
+    return { name: name1, position, salary, age };
   });
 }
 
